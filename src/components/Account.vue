@@ -41,7 +41,7 @@ export default {
   },
   computed:{
     firstName(){
-      console.log("here is the store so far", this.$store.state)
+     // console.log("here is the store so far", this.$store.state)
   return this.$store.state.user.firstName;
     },
   },
@@ -51,7 +51,7 @@ export default {
         Authorization: `Bearer ${this.$store.state.token}`,
       }
     }).then((theResponse)=>{
-        console.log("here is the response", theResponse);
+       // console.log("here is the response", theResponse);
         this.ratingsByUser = theResponse.data;
     }).catch(()=>{this.accountError=true});
   }
