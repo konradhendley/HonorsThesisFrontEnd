@@ -15,7 +15,7 @@
             <th>{{aShoe.name}}</th>
             <th>{{aShoe.type}}</th>
             <th>${{aShoe.cost}}</th>
-            <th><router-link :to='`/shoes/${aShoe.styleFK}`'> <button class="btn btn-primary"> Details</button> </router-link></th>
+            <th><router-link :to='`/shoes/${aShoe.shoeID}`'> <button class="btn btn-primary"> Details</button> </router-link></th>
           </tr>
           <tr></tr>
           <tr></tr>
