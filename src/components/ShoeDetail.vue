@@ -15,7 +15,9 @@
 
         <router-link v-if="auth" :to="`/shoes/${this.$route.params.pk}/rating`"><button class = "btn btn-success">Add a Rating</button></router-link>
         <router-link v-else :to="`/login`"><button class = "btn btn-outline-success">Sign in to Add a Rating</button></router-link>
-      </div>
+        <br/>  <br/>
+      <router-view />
+     </div>
 </template>
 
 <script>

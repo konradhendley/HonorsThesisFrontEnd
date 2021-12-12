@@ -5,7 +5,7 @@ import Login from "./components/Login.vue";
 import ShoeDetail from "./components/ShoeDetail.vue";
 import Shoes from "./components/Shoes.vue";
 import NotFound from "./components/NotFound.vue";
-import ReviewCreate from "./components/ReviewCreate.vue";
+import RatingCreate from "./components/RatingCreate.vue";
 import Signup from "./components/Signup.vue";
 import Account from "./components/Account.vue";
 import myStore from "./store.js"
@@ -22,7 +22,7 @@ const router = createRouter ({
         {path: "/login", component: Login},
         {path: "/shoes", component: Shoes},
         {path: "/shoes/:pk", component: ShoeDetail, 
-            children: [{path: "rating", component: ReviewCreate}]},
+            children: [{path: "rating", component: RatingCreate}]},
         {path: "/signup", component: Signup},
         {path: "/invalidroute(.*)", component: NotFound},
     ],
