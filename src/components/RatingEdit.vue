@@ -4,8 +4,8 @@
         <div class="col-lg-10">
           <div class="card">
             <div class="card-body"  >
-              <h4  >Create a Rating</h4>
-              <form id="review-form" @submit.prevent="submitRating">
+              <h4  >Update Rating</h4>
+              <form id="review-form" @submit.prevent="updateRating">
                 <div class="mb-3"  >
                   <label for="rating-input" class="form-label"  >Score</label>
                   <input type="number" class="form-control" id="score-input" required="" min="1" max="10" v-model="score">
@@ -13,7 +13,7 @@
                   <div class="mb-3"  >
                     <label for="review-input" class="form-label">Rating</label>
                     <input type="text" row="3" class="form-control" id="summary-input" required="" v-model="review">
-                    </div><button type="submit" class="btn btn-primary" >Submit Rating</button>
+                    </div><button type="submit" class="btn btn-primary" >Update Rating</button>
                     <button v-on:click="cancelRating" type="clear" class="btn btn-outline-danger" > Cancel </button>
                     <p  v-if="errorMessage" class ="form-text text-danger">{{ errorMessage }}</p>
                     </form>
@@ -36,18 +36,19 @@ export default {
     }
   },
 methods:{
-  submitRating(){
-    let myRating = {
+  updateRating(){
+    const myRating = {
       score: this.score,
       review: this.review,
-      shoeFK: this.$route.params.pk
+      shoeFK: this.$route.params.pk,
+      userID: this.$route.params.pk
     }
 
-    axios.post("/ratings", myRating, {
+    axios.patch("/ratings/:pk", myRating, {
         headers: {Authorization: `Bearer ${this.$store.state.token}`}
       }).then(()=>{this.$router.replace("/account");
       }).catch(()=>{
-        this.errorMessage = "unable to create a rating, please try again later"
+        this.errorMessage = "unable to edit this rating, please try again later"
       })
     },
     cancelRating(){

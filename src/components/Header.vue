@@ -17,6 +17,10 @@
           <router-link class="nav-link active" aria-current="page" to="shoes">Shoes</router-link>
         </li>
 
+        <li  v-if="auth" class="nav-item">
+          <router-link class="nav-link active" aria-current="page" to="admin">Admin</router-link>
+        </li>
+
          <li v-if="auth" class="nav-item">
           <router-link class="nav-link active" aria-current="page" to="account">My Account</router-link>
         </li>

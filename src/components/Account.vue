@@ -2,6 +2,8 @@
   <div>
       <h1>Account</h1>
       <hr/>
+      <router-link :to="`/accountEdit`"><button class = "btn btn-outline-success">Edit Account</button></router-link>
+      <hr/>
       <h3>{{ firstName }}'s ratings</h3>
 
 
@@ -11,6 +13,7 @@
           <th>Review</th>
           <th>Score</th>
           <th>Shoe</th>
+          <th></th>
         </thead>
 
         <tbody>
@@ -18,6 +21,7 @@
             <th>{{thisRating.review}}</th>
             <th>{{thisRating.score}}</th>
             <th><router-link :to='`/shoes/${thisRating.shoeFK}`'>{{thisRating.shoeFK}}</router-link></th>
+            <th><router-link :to='`/ratings/${thisRating.postID}`'> <button class="btn btn-primary"> Edit</button> </router-link></th>
           </tr>
           <tr></tr>
           <tr></tr>
