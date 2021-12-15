@@ -7,7 +7,7 @@
               <h4  >Update Rating</h4>
               <form id="review-form" @submit.prevent="updateRating">
                 <div class="mb-3"  >
-                  <label for="rating-input" class="form-label"  >Score</label>
+                  <label for="rating-input" class="form-label">Score</label>
                   <input type="number" class="form-control" id="score-input" required="" min="1" max="10" v-model="score">
                   </div>
                   <div class="mb-3"  >
@@ -28,6 +28,13 @@
 import axios from "axios";
 
 export default {
+  computed:{
+  theUsers(){
+    console.log("the user", this.$store.state.user);
+    return this.$store.state.user;
+  }
+},
+
   data(){
     return{
       score: null,
@@ -40,11 +47,10 @@ methods:{
     const myRating = {
       score: this.score,
       review: this.review,
-      shoeFK: this.$route.params.pk,
-      userID: this.$route.params.pk
+      shoeFK: this.$route.query.shoeFK,
     }
 
-    axios.patch("/ratings/:pk", myRating, {
+    axios.patch(`/ratings/${this.$route.params.pk}`, myRating, {
         headers: {Authorization: `Bearer ${this.$store.state.token}`}
       }).then(()=>{this.$router.replace("/account");
       }).catch(()=>{

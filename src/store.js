@@ -27,7 +27,7 @@ export default createStore({
     actions:{
         getShoes({commit}){
             axios.get("/shoes").then((aResponse)=>{
-                console.log("response in /movies", aResponse);
+                //console.log("response in /shoes", aResponse);
                 commit("storeShoes", aResponse.data)
             });
         },

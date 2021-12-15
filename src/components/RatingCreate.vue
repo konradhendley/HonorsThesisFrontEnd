@@ -28,6 +28,14 @@
 import axios from "axios";
 
 export default {
+
+  computed:{
+  theUsers(){
+    console.log("the user", this.$store.state.user);
+    return this.$store.state.user;
+  }
+},
+
   data(){
     return{
       score: null,

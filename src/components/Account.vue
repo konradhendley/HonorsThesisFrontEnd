@@ -10,18 +10,18 @@
 <p v-if="accountError" class="text-danger">Cannot get your account information, please try again later.</p>
       <table v-if="ratingsByUser" class ="table">
         <thead>
+          <th>Shoe</th>
           <th>Review</th>
           <th>Score</th>
-          <th>Shoe</th>
           <th></th>
         </thead>
 
         <tbody>
           <tr v-for="thisRating in ratingsByUser" :key="thisRating.postID">
+            <th><router-link :to='`/shoes/${thisRating.shoeFK}`'>{{thisRating.name}}</router-link></th>
             <th>{{thisRating.review}}</th>
             <th>{{thisRating.score}}</th>
-            <th><router-link :to='`/shoes/${thisRating.shoeFK}`'>{{thisRating.shoeFK}}</router-link></th>
-            <th><router-link :to='`/ratings/${thisRating.postID}`'> <button class="btn btn-primary"> Edit</button> </router-link></th>
+            <th><router-link :to='`/ratings/${thisRating.postID}?shoeFK=${thisRating.shoeFK}`'> <button class="btn btn-primary"> Edit</button> </router-link></th>
           </tr>
           <tr></tr>
           <tr></tr>
