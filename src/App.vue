@@ -19,7 +19,8 @@ export default {
     "my-header": Header,
   },
   created(){
-    this.$store.dispatch("getShoes");
+    this.$store.dispatch("getColleges");
+    this.$store.dispatch("getScholarships");
   }
 }
 </script>

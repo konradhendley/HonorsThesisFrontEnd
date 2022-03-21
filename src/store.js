@@ -7,7 +7,8 @@ export default createStore({
     state: {
         token: null,
         user: null,
-        shoes: []
+        colleges: [],
+        scholarships: []
     },
     mutations:{
         storeTokenInApp(state, myToken){
@@ -16,8 +17,11 @@ export default createStore({
         storeUserInApp(state, theUser){
             state.user = theUser
         },
-        storeShoes(state, shoes){
-            state.shoes = shoes;
+        storeColleges(state, colleges){
+            state.colleges = colleges;
+        },
+        storeScholarships(state, scholarships){
+            state.scholarships = scholarships;
         },
         clearAuthData(state){
             state.token = null;
@@ -25,14 +29,20 @@ export default createStore({
         },
     },
     actions:{
-        getShoes({commit}){
-            axios.get("/shoes").then((aResponse)=>{
-                //console.log("response in /shoes", aResponse);
-                commit("storeShoes", aResponse.data)
+        getColleges({commit}){
+            axios.get("/colleges").then((aResponse)=>{
+                console.log("response in /colleges", aResponse);
+                commit("storeColleges", aResponse.data)
+            });
+        },
+        getScholarships({commit}){
+            axios.get("/scholarships").then((aResponse)=>{
+                console.log("response in /scholarships", aResponse);
+                commit("storeScholarships", aResponse.data)
             });
         },
         logout({commit, state}){
-            axios.post("/member/logout",null,{
+            axios.post("/user/logout",null,{
                 headers:{ Authorization: `Bearer ${state.token}`}
             }).then(()=>{
                 commit("clearAuthData");

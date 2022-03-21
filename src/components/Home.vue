@@ -2,7 +2,7 @@
   <div>
       <h1>Welcome!</h1>
       </div>
-      <p>Shoes.com is the main platform for staying up to date on todays newset kicks. Sign up today to get started and connect with other shoe heads! </p>
+      <p>Need help researching and planning for college? You're in the right place! Sign up for a free acount today to research information on colleges and scholoarships and create financial plans for your adacemic future </p>
       <br/>
       <div class="my-container">
         <div id="carouselExampleIndicators" class="carousel slide carousel" data-bs-ride="carousel">
@@ -16,13 +16,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://sneakernews.com/wp-content/uploads/2019/02/nike-air-max-1-BQ8929-500-1.jpg" class="d-block w-100" alt="...">
+                <img src="https://i.insider.com/5d24ab4d21a86114000e6df5?" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://cdn.sanity.io/images/c1chvb1i/production/963904966bcc8a3ea31a5c42f768b51bba0e2b58-1140x800.png" class="d-block w-100" alt="...">
+                <img src="https://firstgen.naspa.org/images/dmImage/StandardImage/standard_1800x1090_define-firstgen12.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://logodix.com/logo/248890.jpg" class="d-block w-100" alt="...">
+                <img src="https://media.glassdoor.com/l/27536/colorado-state-university-office.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -36,8 +36,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-        <!-- <img src="https://sneakernews.com/wp-content/uploads/2019/02/nike-air-max-1-BQ8929-500-1.jpg">
-        <h6>Nike Air Max 1 "Have a Nike Day"</h6> -->
       </div>
       <br/><br/>
 </template>

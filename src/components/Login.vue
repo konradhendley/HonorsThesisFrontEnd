@@ -4,7 +4,7 @@
       <div v-if="this.$route.query.signupsuccess"  class = "alert alert-success">Thanks for signing up, please log in now.</div>
       <form @submit.prevent="onSubmit">
         <div class="mb-3">
-          <label for="email-input" class="form-label">Password</label>
+          <label for="email-input" class="form-label">Email</label>
           <input 
           type="email" 
           class="form-control" 
@@ -49,7 +49,7 @@ export default {
         };
         //console.log("my form data",myFormData)
 
-        axios.post("/member/login", myFormData).then(
+        axios.post("/users/login", myFormData).then(
         (myResponse)=>{
         console.log("the response",myResponse)
 
@@ -59,7 +59,7 @@ export default {
         this.$router.replace("/account");
         })
         .catch((myError)=>{
-          console.log("error in memebr/login", myError);
+          console.log("error in user/login", myError);
 
           if (myError.response.status==401){
             this.credentialsError = true

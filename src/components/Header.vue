@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <router-link class="navbar-brand" to="/">Shoes.com</router-link>
+    <router-link class="navbar-brand" to="/">Thesis Project</router-link>
     <button 
         class="navbar-toggler" type="button" 
         data-bs-toggle="collapse" 
@@ -14,11 +14,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="shoes">Shoes</router-link>
+          <router-link class="nav-link active" aria-current="page" to="colleges">Colleges</router-link>
         </li>
 
-        <li  v-if="auth" class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="admin">Admin</router-link>
+        <li class="nav-item">
+          <router-link class="nav-link active" aria-current="page" to="scholarships">Scholarships</router-link>
         </li>
 
          <li v-if="auth" class="nav-item">

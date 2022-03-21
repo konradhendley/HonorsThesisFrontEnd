@@ -2,15 +2,16 @@ import {createRouter, createWebHistory} from 'vue-router';
 
 import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
-import ShoeDetail from "./components/ShoeDetail.vue";
-import Shoes from "./components/Shoes.vue";
+import CollegeDetail from "./components/CollegeDetail.vue";
+import Colleges from "./components/Colleges.vue";
+import ScholarshipDetail from "./components/ScholarshipDetail.vue";
+import Scholarships from "./components/Scholarships.vue";
 import NotFound from "./components/NotFound.vue";
-import RatingCreate from "./components/RatingCreate.vue";
+import PlansCreate from "./components/PlansCreate.vue";
 import Signup from "./components/Signup.vue";
 import Account from "./components/Account.vue";
 import AccountEdit from "./components/AccountEdit.vue";
-import RatingEdit from "./components/RatingEdit";
-import Admin from "./components/Admin";
+import PlansEdit from "./components/PlansEdit";
 import myStore from "./store.js"
 
 const router = createRouter ({
@@ -23,14 +24,15 @@ const router = createRouter ({
             }
         }},
         {path: "/login", component: Login},
-        {path: "/shoes", component: Shoes},
-        {path: "/shoes/:pk", component: ShoeDetail, 
-            children: [{path: "rating", component: RatingCreate}]},
+        {path: "/colleges", component: Colleges},
+        {path: "/colleges/:pk", component: CollegeDetail, 
+            children: [{path: "plans", component: PlansCreate}]},
+        {path: "/scholarships", component: Scholarships},
+        {path: "/scholarships/:pk", component: ScholarshipDetail},
         {path: "/signup", component: Signup},
         {path: "/invalidroute(.*)", component: NotFound},
         {path: "/accountEdit", component: AccountEdit},
-        {path: "/ratings/:pk", component: RatingEdit},
-        {path: "/admin", component: Admin},
+        {path: "/plans/:pk", component: PlansEdit},
     ],
 });
 
