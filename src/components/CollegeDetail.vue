@@ -1,11 +1,10 @@
 <template>
+<br/><br/>
   <div>
-      <div class="card"> 
+      <div class="card" > 
         <div class="card-body">
-          <h2 class ="text-primary">{{ college.name }}</h2>
+       <h2 class ="text-black">{{ college.name }}</h2>
           <br/>
-
-
     <p>City: <br/><strong>{{college.city}}</strong></p>
     <p>State: <br/><strong>{{college.state}}</strong></p>
     <p>Type: <br/><strong>{{college.type}}</strong></p>
@@ -25,6 +24,7 @@
         <br/>  <br/>
       <router-view />
      </div>
+     <br/><br/>
 </template>
 
 <script>
@@ -59,5 +59,7 @@ computed:{
 </script>
 
 <style>
-
+.card{
+  background-image: linear-gradient(#228B22,#96e693 );
+}
 </style>

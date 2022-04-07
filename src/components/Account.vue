@@ -1,10 +1,11 @@
 <template>
   <div>
-      <h1>Account</h1>
-      <hr/>
+      <h1> {{ firstName }}'s Account</h1>
+      <br/>
       <router-link :to="`/accountEdit`"><button class = "btn btn-outline-success">Edit Account</button></router-link>
-      <hr/>
-      <h3>{{ firstName }}'s plans</h3>
+      <br/><br/>
+      <h3> My Plans</h3>
+      <br/>
 
 
 <p v-if="accountError" class="text-danger">Cannot get your account information, please try again later.</p>
@@ -16,10 +17,10 @@
 
         <tbody>
           <tr v-for="thisPlan in plansByUser" :key="thisPlan.planID">
-            <th><router-link :to='`/plans/${thisPlan.planID}`'>{{thisPlan.planName}}</router-link></th>
+            <th><router-link :to='`/plans/${thisPlan.planID}/dashboard`'>{{thisPlan.planName}}</router-link></th>
             <th>{{thisPlan.name}}</th>
-            <th><router-link :to='`/plans/${thisPlan.planID}`'>
-             <button class="btn btn-primary"> Edit</button> </router-link></th>
+            <th><router-link :to='`/plans/${thisPlan.planID}?collegeID=${thisPlan.collegeID}`'>
+             <button class="btn btn-success"> Edit</button> </router-link></th>
           </tr>
           <tr></tr>
           <tr></tr>
@@ -61,5 +62,7 @@ export default {
 </script>
 
 <style>
-
+.btn{
+  outline-color: #228B22;
+}
 </style>

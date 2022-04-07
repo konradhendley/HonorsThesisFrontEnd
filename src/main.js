@@ -1,3 +1,4 @@
+import VueApexCharts from 'vue3-apexcharts';
 import { createApp } from 'vue';
 import App from './App.vue';
 import axios from "axios";
@@ -11,5 +12,6 @@ const myApp = createApp(App)
 myApp.use(myRouter);
 myApp.use(theStore);
 myApp.mount('#app');
+myApp.use(VueApexCharts);
 
 

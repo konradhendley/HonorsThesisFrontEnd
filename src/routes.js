@@ -12,6 +12,7 @@ import Signup from "./components/Signup.vue";
 import Account from "./components/Account.vue";
 import AccountEdit from "./components/AccountEdit.vue";
 import PlansEdit from "./components/PlansEdit";
+import PlansDashboard from "./components/PlansDashboard"
 import myStore from "./store.js"
 
 const router = createRouter ({
@@ -33,6 +34,7 @@ const router = createRouter ({
         {path: "/invalidroute(.*)", component: NotFound},
         {path: "/accountEdit", component: AccountEdit},
         {path: "/plans/:pk", component: PlansEdit},
+        {path: "/plans/:pk/dashboard", component: PlansDashboard},
     ],
 });
 

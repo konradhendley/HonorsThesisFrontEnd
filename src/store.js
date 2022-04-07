@@ -7,6 +7,7 @@ export default createStore({
     state: {
         token: null,
         user: null,
+        plans: [],
         colleges: [],
         scholarships: []
     },
@@ -16,6 +17,9 @@ export default createStore({
         },
         storeUserInApp(state, theUser){
             state.user = theUser
+        },
+        storePlans(state, plans){
+            state.plans = plans;
         },
         storeColleges(state, colleges){
             state.colleges = colleges;
@@ -31,7 +35,7 @@ export default createStore({
     actions:{
         getColleges({commit}){
             axios.get("/colleges").then((aResponse)=>{
-                console.log("response in /colleges", aResponse);
+                //console.log("response in /colleges", aResponse);
                 commit("storeColleges", aResponse.data)
             });
         },
@@ -39,6 +43,11 @@ export default createStore({
             axios.get("/scholarships").then((aResponse)=>{
                 console.log("response in /scholarships", aResponse);
                 commit("storeScholarships", aResponse.data)
+            });
+        },
+        getPlans({commit}){
+            axios.get("/plans").then((aResponse)=>{
+                commit("storePlans", aResponse.data)
             });
         },
         logout({commit, state}){

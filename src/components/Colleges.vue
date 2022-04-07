@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>Colleges</h1>
-      <hr/>
+      <br/>
       <table  class ="table">
         <thead>
           <th>Name</th>
@@ -17,7 +17,7 @@
             <th>{{aCollege.type}}</th>
             <th>{{aCollege.state}}</th>
             <th>{{aCollege.city}}</th>
-            <th><router-link :to='`/colleges/${aCollege.collegeID}`'> <button class="btn btn-primary"> Details</button> </router-link></th>
+            <th><router-link :to='`/colleges/${aCollege.collegeID}`'> <button class="btn btn-success"> More Info</button> </router-link></th>
           </tr>
           <tr></tr>
           <tr></tr>
@@ -27,6 +27,7 @@
 
       </table>
       </div>
+      <div><p>All information on colleges is collected from <a href= "https://www.univstats.com/">Univstats.com</a> </p> </div>
 </template>
 
 <script>

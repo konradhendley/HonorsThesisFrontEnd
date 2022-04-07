@@ -1,5 +1,6 @@
 <template>
   <div>
+      <br/>
       <h1>Welcome!</h1>
       </div>
       <p>Need help researching and planning for college? You're in the right place! Sign up for a free acount today to research information on colleges and scholoarships and create financial plans for your adacemic future </p>
@@ -47,5 +48,7 @@ export default {
 </script>
 
 <style>
-
+h1{
+    text-align: center;
+}
 </style>

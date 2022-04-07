@@ -21,6 +21,7 @@ export default {
   created(){
     this.$store.dispatch("getColleges");
     this.$store.dispatch("getScholarships");
+    this.$store.dispatch("getPlans");
   }
 }
 </script>

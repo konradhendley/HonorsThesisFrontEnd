@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>Scholarships</h1>
-      <hr/>
+      <br/>
       <table  class ="table">
         <thead>
           <th>Name</th>
@@ -13,7 +13,7 @@
           <tr v-for="ascholarship in theScholarships" :key="ascholarship.scholarshipID">
             <th>{{ascholarship.name}}</th>
             <th>${{ascholarship.amount}}</th>
-            <th><router-link :to='`/scholarships/${ascholarship.scholarshipID}`'> <button class="btn btn-primary"> Details</button> </router-link></th>
+            <th><router-link :to='`/scholarships/${ascholarship.scholarshipID}`'> <button class="btn btn-success"> More Details</button> </router-link></th>
           </tr>
           <tr></tr>
           <tr></tr>
