@@ -3,8 +3,8 @@
   <div>
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <div class="form">
-            <div class="form-body"  >
+          <div class="plan">
+            <div class="card-body"  >
               <h4  >Edit your plan </h4>
               <form id="review-form" @submit.prevent="updatePlan">
                 <div class="mb-3"  >
@@ -103,7 +103,7 @@
                   <label for="rating-input" class="form-label"  >Miscellaneous Income</label>
                   <input type="number" class="form-control" id="score-input" required="" :placeholder="[[ plan.income_misc]]" v-model="incomeMisc">
                   </div>
-                    <button type="submit" class="btn btn-success" >Update Plan</button>
+                    <button type="submit" class="btn btn-primary" >Update Plan</button>
                     <button v-on:click="cancelRating" type="clear" class="btn btn-outline-danger" > Cancel </button>
                     <p  v-if="errorMessage" class ="form-text text-danger">{{ errorMessage }}</p>
                     </form>

@@ -1,43 +1,46 @@
 <template>
-  <div>
-      <br/>
-      <h1>Welcome!</h1>
-      </div>
-      <p>Need help researching and planning for college? You're in the right place! Sign up for a free acount today to research information on colleges and scholoarships and create financial plans for your adacemic future </p>
-      <br/>
-      <div class="my-container">
-        <div id="carouselExampleIndicators" class="carousel slide carousel" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://i.insider.com/5d24ab4d21a86114000e6df5?" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://firstgen.naspa.org/images/dmImage/StandardImage/standard_1800x1090_define-firstgen12.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://media.glassdoor.com/l/27536/colorado-state-university-office.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+<br/>
+  <div class="card mb-3" style="">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://itk-assets.nyc3.cdn.digitaloceanspaces.com/2020/03/back_portrait_of_graduated_wearing_a_black_hat_-1620x911.jpeg" class="img-fluid rounded-start" alt="...">
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-light">Thinking about college?</h5>
+        <p class="card-text text-light">There are a lot of factors that go into chosing the right college for you. let us help make choosing easier.</p>
       </div>
+    </div>
+  </div>
+</div>
+<br/>
+  <div class="card mb-3" style="">
+  <div class="row g-0 card row flex-row-reverse">
+    <div class="col-md-4">
+      <img src="https://firstgen.naspa.org/images/dmImage/StandardImage/standard_1800x1090_define-firstgen12.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-light">Research potential options</h5>
+        <p class="card-text text-light">Take a look at some colleges and scholarships and see if one is the right fit for you.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+  <div class="card mb-3" style="">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://media.glassdoor.com/l/27536/colorado-state-university-office.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-light">Create the right plan just for you</h5>
+        <p class="card-text text-light">Sign up for a free acount today to research information and create a financial plan for your adacemic future.</p>
+      </div>
+    </div>
+  </div>
+</div>
       <br/><br/>
 </template>
 

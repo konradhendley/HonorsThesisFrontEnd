@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-success">
   <div class="container-fluid">
-    <router-link class="navbar-brand" to="/">Thesis Project</router-link>
+    <router-link class="navbar-brand text-light" to="/">Thesis Project</router-link>
     <button 
         class="navbar-toggler" type="button" 
         data-bs-toggle="collapse" 
@@ -14,25 +14,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="/colleges">Colleges</router-link>
+          <router-link class="nav-link active text-light" aria-current="page" to="/colleges">Colleges</router-link>
         </li>
 
         <li class="nav-item">
-          <router-link  class="nav-link active" aria-current="page" to="/scholarships">Scholarships</router-link>
+          <router-link  class="nav-link active text-light" aria-current="page" to="/scholarships">Scholarships</router-link>
         </li>
 
          <li v-if="auth" class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="/account">My Account</router-link>
+          <router-link class="nav-link active text-light" aria-current="page" to="/account">My Account</router-link>
         </li>
 
          <li  v-if="!auth" class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="login"><button class = "btn btn-success text-dark">Login</button></router-link>
+          <router-link class="nav-link active text-light" aria-current="page" to="login"><button class = "btn btn-primary">Login</button></router-link>
         </li>
 
           <li  v-if="!auth" class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="signup"><button class = "btn btn-outline-success text-dark">Signup</button></router-link>
+          <router-link class="nav-link active text-light" aria-current="page" to="signup"><button class = "btn btn-outline-primary text-light">Signup</button></router-link>
         </li>
-          <li  v-if="auth" class="nav-item"> <router-link :to='`/`'> <button class = "btn btn-success" @click="onLogout">Logout</button></router-link>
+          <li  v-if="auth" class="nav-item"> <router-link :to='`/`'> <button class = "btn btn-primary" @click="onLogout">Logout</button></router-link>
         </li>
       </ul>
     </div>
@@ -59,6 +59,6 @@ export default{
   align-items: center;
 }
 .navbar{
-  background-image: linear-gradient(#228B22,#96e693 );
+  background-image: linear-gradient(#007fff,#87ceeb );
 }
 </style>

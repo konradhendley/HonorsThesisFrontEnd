@@ -13,7 +13,7 @@
           <tr v-for="ascholarship in theScholarships" :key="ascholarship.scholarshipID">
             <th>{{ascholarship.name}}</th>
             <th>${{ascholarship.amount}}</th>
-            <th><router-link :to='`/scholarships/${ascholarship.scholarshipID}`'> <button class="btn btn-success"> More Details</button> </router-link></th>
+            <th><router-link :to='`/scholarships/${ascholarship.scholarshipID}`'> <button class="btn btn-primary"> More Details</button> </router-link></th>
           </tr>
           <tr></tr>
           <tr></tr>

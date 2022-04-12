@@ -2,16 +2,19 @@
   <div>
       <p> <b>Your Plan: </b> {{plan.planName}}</p>
 </div>
-<apexchart type="donut" height="250" :options="chartOptions" :series="series" />
+<div id="chart">
+    <apexchart type="donut" width="720" :options="chartOptions" :series="series"></apexchart>
+</div>
 </template>
 
 
 <script>
+import axios from "axios";
 
 export default {
 
 computed:{
-plans(){
+plan(){
 	let allPlans = this.$store.state.plans;
 
     let thisPlan = allPlans.find((aPlan)=>{return aPlan.planID == this.$route.params.pk});
@@ -20,49 +23,30 @@ plans(){
 }
 },
 
-  name: "overview",
-
-  data: function() {
+  data() {
    return {
-
-				series: [{
-          data: this.plan()
-        }],
+				series: [],
 				chartOptions: {
-					colors: ['#008FFB', '#00E396', '#FEB019'],
-					animations: {
-						enabled: true,
-						easing: 'easeinout',
-						speed: 1000,
-					},
-					fill: {
-						type: 'gradient',
-						gradient: {
-							shade: 'dark',
-							type: 'vertical',
-							shadeIntensity: 0.05,
-							inverseColors: false,
-							opacityFrom: 1,
-							opacityTo: 0.9,
-							stops: [0, 100],
-						},
-					},
 					chart: {
+						width: 580,
+						type: "donut",
 						toolbar: {
-							show: false,
+							show: true,
 						},
 					},
 					title: {
-						text: 'Donut',
-						align: 'left',
+						text: 'Breakdown of Your Plan',
+						align: 'center',
 						style: {
 							color: '#000',
 						},
 					},
-					labels: ['Apple', 'Mango', 'Orange', 'Watermelon', 'Strawberry'],
+					labels: ["Tuition","Books","Supplies","Miscellaneous Academic","Rent", "Groceries", "Utilities", "Phone", "Insurance", "Transportation", "Miscellaneous Living", "Entertainment", "Shopping","Food","Savings","Miscellaneous Personal","Job","Scholarships","Grants","Contributions","Miscelaneous Income"],
+					colors: ['#FF0000', '#FF0000', '#FF0000', '#FF0000','#FFA500', '#FFA500','#FFA500','#FFA500','#FFA500','#FFA500','#FFA500','#069FF9','#069FF9','#069FF9', '#069FF9', '#069FF9','#00FF00','#00FF00','#00FF00','#00FF00','#00FF00']
+							,
 					responsive: [
 						{
-							breakpoint: 480,
+							breakpoint: 680,
 							options: {
 								chart: {
 									width: 250,
@@ -81,16 +65,37 @@ plans(){
 				},
 			}
   },
-  methods: {
-    plan: function() {
 
-        let allPlans = this.$store.state.plans;
+   created() {
+    axios.get(`/plans/${this.$route.params.pk}/dashboard`).then((response) => {
+		console.log("so heres the plan", response.data)
+		
+		var series = this.series;
+		series.push(response.data.tuition);
+		series.push(response.data.books);
+		series.push(response.data.supplies);
+		series.push(response.data.academic_misc);
 
-    let thisPlan = allPlans.find((aPlan)=>{return aPlan.planID == this.$route.params.pk});
+		series.push(response.data.rent);
+		series.push(response.data.groceries);
+		series.push(response.data.utilities);
+		series.push(response.data.phone);
+		series.push(response.data.insurance);
+		series.push(response.data.transportation);
+		series.push(response.data.living_misc);
 
-    return thisPlan;
-    }
-  }
+		series.push(response.data.entertainment);
+		series.push(response.data.shopping);
+		series.push(response.data.food);
+		series.push(response.data.savings);
+		series.push(response.data.personal_misc);
 
-     };
+		series.push(response.data.job);
+		series.push(response.data.scholarships);
+		series.push(response.data.grants);
+		series.push(response.data.contributions);
+		series.push(response.data.income_misc);
+    })
+  },
+} 
  </script>

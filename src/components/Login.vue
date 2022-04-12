@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>Login</h1>
-      <div v-if="this.$route.query.signupsuccess"  class = "alert alert-success">Thanks for signing up, please log in now.</div>
+      <div v-if="this.$route.query.signupsuccess"  class = "alert alert-primary">Thanks for signing up, please log in now.</div>
       <form @submit.prevent="onSubmit">
         <div class="mb-3">
           <label for="email-input" class="form-label">Email</label>
@@ -22,7 +22,7 @@
             placeholder="Password" 
             required=""
             v-model="password">
-            </div><button type="submit" class="btn btn-success">Submit</button>
+            </div><button type="submit" class="btn btn-primary">Submit</button>
             <p v-if="credentialsError" class = "form-text text-danger"> invalid credentials </p>
             
             <p v-if="loginError" class = "form-text text-danger"> could not log you in, please try again later</p> </form>
@@ -51,7 +51,6 @@ export default {
 
         axios.post("/users/login", myFormData).then(
         (myResponse)=>{
-        console.log("the response",myResponse)
 
         this.$store.commit("storeTokenInApp", myResponse.data.token);
         this.$store.commit("storeUserInApp",  myResponse.data.user);

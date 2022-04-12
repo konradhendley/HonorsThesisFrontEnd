@@ -1,10 +1,10 @@
 <template>
   <div>
       <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="card">
+        <div>
+          <div class="plan">
             <div class="card-body"  >
-              <h4  >Create a Plan</h4>
+              <h4  style="text-align:center">Create a Plan</h4>
               <form id="review-form" @submit.prevent="submitPlan">
                 <div class="mb-3"  >
                   <label for="rating-input" class="form-label"  >Plan Name</label>
@@ -177,7 +177,7 @@ methods:{
       savings: this.savings,
       personal_misc: this.personalMisc,
       personal_total: this.entertainment + this.shopping + this.food + this.savings + this.personalMisc,
-      expenses_total: this.tution,
+      expenses_total: this.tuition + this.books + this.supplies + this.academicMisc + this.rent + this.groceries + this.utilities + this.phone + this.insurance + this.transportation + this.livingMisc + this.entertainment + this.shopping + this.food + this.savings + this.personalMisc,
       job: this.job,
       scholarships: this.scholarships,
       grants: this.grants,
@@ -204,5 +204,8 @@ methods:{
 <style>
 button{
   margin-right: 5px;
+}
+ .plan{
+    background-image: linear-gradient(#87ceeb,#87ceeb );
 }
 </style>

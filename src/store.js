@@ -41,7 +41,7 @@ export default createStore({
         },
         getScholarships({commit}){
             axios.get("/scholarships").then((aResponse)=>{
-                console.log("response in /scholarships", aResponse);
+                //console.log("response in /scholarships", aResponse);
                 commit("storeScholarships", aResponse.data)
             });
         },

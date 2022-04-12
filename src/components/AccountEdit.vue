@@ -18,6 +18,7 @@
           <input type="password" class="form-control" id="password-input" placeholder="Password" required="" v-model="password">
           </div>
           <button type="submit" class="btn btn-primary">Update</button>
+          <button v-on:click="cancelRating" type="clear" class="btn btn-outline-danger" > Cancel </button>
           <p id="error-signup" class="text-danger">{{errorMessage}}</p>
           </form>
       </div>
@@ -54,7 +55,7 @@ computed:{
        password: this.password
      }
      //console.log(myformData);
-     axios.patch("/member/me", myFormData, {
+     axios.patch("/users/me", myFormData, {
         headers: {Authorization: `Bearer ${this.$store.state.token}`}})
      .then((myResponse)=>{
        console.log("the response", myResponse);
@@ -66,6 +67,9 @@ computed:{
        }else{this.errorMessage = "cannot update your account information, please try again later"}
      });
     },
+     cancelRating(){
+      this.$router.go(-1);
+    }
   },
 };
 </script>
