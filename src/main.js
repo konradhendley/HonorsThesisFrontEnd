@@ -6,7 +6,7 @@ import axios from "axios";
 import myRouter from "./routes.js";
 import theStore from "./store.js";
 
-axios.defaults.baseURL = "http://localhost:8000/"
+axios.defaults.baseURL = "https://honorsthesis-api.azurewebsites.net"
 
 const myApp = createApp(App)
 myApp.use(myRouter);
