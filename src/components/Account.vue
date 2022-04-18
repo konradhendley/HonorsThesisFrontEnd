@@ -39,8 +39,8 @@
           <tr v-for="thisScholarship in userScholarships" :key="thisScholarship.userID">
             <th><router-link :to='`/scholarships/${thisScholarship.scholarshipID}`'>{{thisScholarship.name[1]}}</router-link></th>
             <th>{{thisScholarship.name[0]}}</th>
-            <th><router-link :to='`/scholarships/${thisScholarship.scholarshipID}`'>
-             <button class="btn btn-primary"> Link</button> </router-link></th>
+            <th><a :href = "thisScholarship.link"> <button class="btn btn-primary"> Link</button></a>
+             </th>
           </tr>
           <tr></tr>
           <tr></tr>

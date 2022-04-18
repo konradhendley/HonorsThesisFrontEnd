@@ -1,6 +1,7 @@
 <template>
+<br/>
   <div>
-      <p> <b>Your Plan: </b> {{plan.planName}}</p>
+      <p> <b>Plan Name: </b> {{plan.planName}}</p>
 </div>
 <div id="chart">
     <apexchart type="donut" width="720" :options="chartOptions" :series="series"></apexchart>
@@ -36,13 +37,13 @@ plan(){
 					},
 					title: {
 						text: 'Breakdown of Your Plan',
-						align: 'center',
+						align: 'left',
 						style: {
 							color: '#000',
 						},
 					},
 					labels: ["Tuition","Books","Supplies","Miscellaneous Academic","Rent", "Groceries", "Utilities", "Phone", "Insurance", "Transportation", "Miscellaneous Living", "Entertainment", "Shopping","Food","Savings","Miscellaneous Personal","Job","Scholarships","Grants","Contributions","Miscelaneous Income"],
-					colors: ['#FF0000', '#FF0000', '#FF0000', '#FF0000','#FFA500', '#FFA500','#FFA500','#FFA500','#FFA500','#FFA500','#FFA500','#069FF9','#069FF9','#069FF9', '#069FF9', '#069FF9','#00FF00','#00FF00','#00FF00','#00FF00','#00FF00']
+					colors: ['#FF0000', '#FF0000', '#FF0000', '#FF0000','#FFA500', '#FFA500','#FFA500','#FFA500','#FFA500','#FFA500','#FFA500','#069FF9','#069FF9','#069FF9', '#069FF9', '#069FF9','#228B22','#228B22','#228B22','#228B22','#228B22']
 							,
 					responsive: [
 						{
