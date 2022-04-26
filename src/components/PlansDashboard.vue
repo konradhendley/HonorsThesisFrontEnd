@@ -1,7 +1,10 @@
 <template>
 <br/>
-  <div>
-      <p> <b>Plan Name: </b> {{plan.planName}}</p>
+  <div class = "title">
+      <p> Here is a breakdown of your plan</p>
+</div>
+<div class = "hamburger">
+      <p> click the hamburger icon for more</p>
 </div>
 <div id="chart">
     <apexchart type="donut" width="720" :options="chartOptions" :series="series"></apexchart>
@@ -15,12 +18,12 @@ import axios from "axios";
 export default {
 
 computed:{
-plan(){
-	let allPlans = this.$store.state.plans;
+planName(){
+	//let allPlans = this.$store.state.plans.planName;
 
-    let thisPlan = allPlans.find((aPlan)=>{return aPlan.planID == this.$route.params.pk});
-
-    return thisPlan;
+    //let thisPlan = allPlans.find((aPlan)=>{return aPlan.planID == this.$route.params.pk});
+	console.log("working plan", this.$store.state.plans.pk)
+    return this.$store.state.plans.planName;
 }
 },
 
@@ -33,10 +36,35 @@ plan(){
 						type: "donut",
 						toolbar: {
 							show: true,
+							offsetX: 0,
+							offsetY: 0,
+							tools: {
+							download: true,
+							selection: true,
+							customIcons: []
+							},
+							export: {
+							csv: {
+								filename: "My Plan",
+								columnDelimiter: ',',
+								headerCategory: 'category',
+								headerValue: 'value',
+								dateFormatter(timestamp) {
+								return new Date(timestamp).toDateString()
+								}
+							},
+							svg: {
+								filename: "My Plan",
+							},
+							png: {
+								filename: "My Plan",
+							}
+							},
+							autoSelected: 'zoom'
 						},
 					},
 					title: {
-						text: 'Breakdown of Your Plan',
+						text: '',
 						align: 'left',
 						style: {
 							color: '#000',
@@ -100,3 +128,11 @@ plan(){
   },
 } 
  </script>
+<style>
+.hamburger{
+    text-align: right;
+}
+.title{
+    text-align: center;
+}
+</style>
