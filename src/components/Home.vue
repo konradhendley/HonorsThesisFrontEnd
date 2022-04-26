@@ -1,5 +1,10 @@
 <template>
 <br/>
+      <div style="text-align: center">
+        <h3>CIS200 Students</h3>
+     <p> When you are finished exploring the website please take the  <a href="https://colostate.az1.qualtrics.com/jfe/form/SV_3ZZfkfznweUtgPQ">survey</a>. Thank you!</p>
+    </div>
+    <br/>
   <div class="card mb-3" style="">
   <div class="row g-0">
     <div class="col-md-4">
